@@ -8,6 +8,12 @@ import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
 
+// Companies list
+routes.get('/company', CompanyController.index);
+
+// Users list
+routes.get('/users', UserController.index);
+
 // Account creation
 routes.post('/users', UserController.store);
 routes.post('/company', CompanyController.store);

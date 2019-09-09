@@ -2,6 +2,16 @@ import * as Yup from 'yup';
 import Company from '../models/Company';
 
 class CompanyController {
+  async index(_, res) {
+    const companyExists = await Company.findAll();
+
+    if (!companyExists) {
+      return res.status(404).json({ error: 'No company was found!' });
+    }
+
+    return res.json(companyExists);
+  }
+
   async store(req, res) {
     const companyExists = await Company.findOne({
       where: { email: req.body.email },
