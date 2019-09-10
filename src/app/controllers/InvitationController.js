@@ -7,7 +7,7 @@ class InvitationController {
 
     const invitations = await Invitation.findAll({
       where: { company_id: req.userId },
-      order: ['id'],
+      order: ['created_at'],
       attributes: ['id', 'created_at'],
       limit: 20,
       offset: (page - 1) * 20,

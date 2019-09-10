@@ -4,6 +4,7 @@ import UserController from './app/controllers/UserController';
 import CompanyController from './app/controllers/CompanyController';
 import SessionController from './app/controllers/SessionController';
 import InvitationController from './app/controllers/InvitationController';
+import ApplicationController from './app/controllers/ApplicationController';
 
 import authMiddleware from './app/middlewares/auth';
 
@@ -27,6 +28,10 @@ routes.use(authMiddleware);
 // Invitations
 routes.get('/invite', InvitationController.index);
 routes.post('/invite', InvitationController.store);
+
+// Applications
+routes.get('/apply', ApplicationController.index);
+routes.post('/apply', ApplicationController.store);
 
 // Updates for companies and users.
 routes.put('/users', UserController.update);
