@@ -1,6 +1,8 @@
 import User from '../models/User';
 import Invitation from '../models/Invitation';
 
+import Notification from '../schemas/Notification';
+
 class InvitationController {
   async index(req, res) {
     const { page = 1 } = req.query;
@@ -65,6 +67,17 @@ class InvitationController {
     const invitation = await Invitation.create({
       user_id,
       company_id: req.userId,
+    });
+
+    /**
+     * Notify user
+     */
+
+    const company = await User.findByPk(req.userId);
+
+    await Notification.create({
+      content: `New invitation recieved from ${company.name}!`,
+      user: user_id,
     });
 
     return res.json(invitation);

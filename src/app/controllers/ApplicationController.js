@@ -1,6 +1,8 @@
 import User from '../models/User';
 import Application from '../models/Application';
 
+import Notification from '../schemas/Notification';
+
 class ApplicationController {
   async index(req, res) {
     const { page = 1 } = req.query;
@@ -65,6 +67,17 @@ class ApplicationController {
     const application = await Application.create({
       company_id,
       user_id: req.userId,
+    });
+
+    /**
+     * Notify company
+     */
+
+    const user = await User.findByPk(req.userId);
+
+    await Notification.create({
+      content: `New application recieved from ${user.name}!`,
+      user: company_id,
     });
 
     return res.json(application);
