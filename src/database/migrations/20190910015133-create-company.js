@@ -1,7 +1,6 @@
-/* eslint-disable prettier/prettier */
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('users', {
+    queryInterface.createTable('companies', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -12,7 +11,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      cpf: {
+      cnpj: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -24,6 +23,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      company: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: false,
@@ -34,5 +38,5 @@ module.exports = {
       },
     }),
 
-  down: queryInterface => queryInterface.dropTable('users'),
+  down: queryInterface => queryInterface.dropTable('companies'),
 };

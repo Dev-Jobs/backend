@@ -8,6 +8,7 @@ class Company extends Model {
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         cnpj: Sequelize.STRING,
+        company: Sequelize.BOOLEAN,
         password: Sequelize.VIRTUAL,
         password_hash: Sequelize.STRING,
       },
