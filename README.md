@@ -1,3 +1,3 @@
-# Jobmates
+# DevJobs
 
-- A platform to connect employers to employees in the easiest way possible.
+- A platform focused on connect developers and companies in the easiest way possible.
