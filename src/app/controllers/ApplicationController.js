@@ -1,4 +1,4 @@
-import Company from '../models/Company';
+import User from '../models/User';
 import Application from '../models/Application';
 
 class ApplicationController {
@@ -13,7 +13,7 @@ class ApplicationController {
       offset: (page - 1) * 20,
       include: [
         {
-          model: Company,
+          model: User,
           as: 'company',
           attributes: ['id', 'name'],
         },

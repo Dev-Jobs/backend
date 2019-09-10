@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      cpf: {
+      numero_cadastro: {
         type: Sequelize.STRING,
         allowNull: false,
       },

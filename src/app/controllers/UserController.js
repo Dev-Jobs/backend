@@ -6,7 +6,7 @@ class UserController {
     const userExists = await User.findAll();
 
     if (!userExists) {
-      return res.status(404).json({ error: 'No company was found!' });
+      return res.status(404).json({ error: 'No user was found!' });
     }
 
     return res.json(userExists);
@@ -19,13 +19,16 @@ class UserController {
       return res.status(400).json({ error: 'User already exists.' });
     }
 
-    const { id, name, email, cpf } = await User.create(req.body);
+    const { id, name, email, company, numero_cadastro } = await User.create(
+      req.body
+    );
 
     return res.json({
       id,
       name,
       email,
-      cpf,
+      numero_cadastro,
+      company,
     });
   }
 
