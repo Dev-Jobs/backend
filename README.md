@@ -4,7 +4,7 @@
 
 #
 
-This is the backend repository from DevJobs's Site and App.
+This is the backend repository from DevJobs's [Site](https://github.com/gabrielccarvalho/DevJobs) and App.
 
 It's a API REST built with NodeJS + Express.
 
