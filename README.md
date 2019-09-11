@@ -61,6 +61,7 @@ Comming Soon when the first production version come out!
 
 ### User
 
+```JavaScript
 {
 name: Sequelize.STRING,
 email: Sequelize.STRING,
@@ -69,43 +70,48 @@ company: Sequelize.BOOLEAN,
 password: Sequelize.VIRTUAL,
 password_hash: Sequelize.STRING,
 },
+```
 
 #### Field Details
 
-name: Is a string field that recieves your name as data.
-email: Is a string field that recieves your email as data.
-numero_cadastro: Is a string field that recieves either your cpf or cnpj (if you are a company) as data.
-company: Is a Boolean field that recieves your status (company or non-company type user) as data.
-password: Is a virtual field that recieves your actual password as data.
-password_hash: Is a string field that recieves your hashed password as data.
+- name: Is a string field that recieves your name as data.
+- email: Is a string field that recieves your email as data.
+- numero_cadastro: Is a string field that recieves either your cpf or cnpj (if you are a company) as data.
+- company: Is a Boolean field that recieves your status (company or non-company type user) as data.
+- password: Is a virtual field that recieves your actual password as data.
+- password_hash: Is a string field that recieves your hashed password as data.
 
 ### Invitation
 
 This model only have foreign keys.
 
+```JavaScript
 static associate(models) {
 this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
 this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 }
+```
 
 #### Field Details
 
-user_id: Is a number field that recieves the id of a non-company type user.
-company_id: Is a number field that recieves the id of a company type user
+- user_id: Is a number field that recieves the id of a non-company type user.
+- company_id: Is a number field that recieves the id of a company type user
 
 ### Application
 
 This model only have foreign keys.
 
+```JavaScript
 static associate(models) {
 this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
 this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 }
+```
 
 #### Field Details
 
-user_id: Is a number field that recieves the id of a non-company type user.
-company_id: Is a number field that recieves the id of a company type user
+- user_id: Is a number field that recieves the id of a non-company type user.
+- company_id: Is a number field that recieves the id of a company type user
 
 ## Technologies:
 
