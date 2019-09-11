@@ -52,6 +52,9 @@ Cloning the repository
 
 ```bash
 $ https://github.com/gabrielccarvalho/devjobs-backend
+```
+
+```bash
 $ cd devjobs-backend
 ```
 
@@ -77,15 +80,15 @@ $ yarn dev
 
 #### List Users
 
-| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
-| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
-| /users   |  GET   | -      | -          | -     | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+| Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
+|  /users  |  GET   |   -    |     -      |  -   |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 #### Create Account
 
-| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
-| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
-| /users   | POST   | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+| Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
+|  /users  |  POST  |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 The JSON body should look like this:
 
@@ -114,9 +117,9 @@ The JSON body should look like this:
 
 #### Log in
 
-| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
-| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
-| /session |  PUT   | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+| Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
+| /session |  PUT   |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 The JSON body should look like this:
 
@@ -131,9 +134,9 @@ The JSON body should look like this:
 
 #### Update Information
 
-| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
-| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
-| /users   | POST   | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+| Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
+|  /users  |  POST  |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 The JSON body shoul look like this:
 
@@ -162,15 +165,15 @@ The JSON body shoul look like this:
 
 #### List Invites
 
-| Endpoint | Method | Params | URL Params | Success Response | Error Responsonse                 |
-| :---:    | :---:  | :---:  | :---:      | :---:            | :---:                             |
-| /invite  |  GET   | -      | -          | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+| Endpoint | Method | Params | URL Params | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :--------------: | :-------------------------------: |
+| /invite  |  GET   |   -    |     -      |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 #### Send Invite
 
-| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
-| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
-| /invite  |  POST  | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+| Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
+| /invite  |  POST  |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 The JSON body shoul look like this:
 
@@ -182,15 +185,15 @@ The JSON body shoul look like this:
 
 #### List Applications
 
-| Endpoint | Method | Params | URL Params | Success Response | Error Responsonse                 |
-| :---:    | :---:  | :---:  | :---:      | :---:            | :---:                             |
-| /apply   |  GET   | -      | -          | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+| Endpoint | Method | Params | URL Params | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :--------------: | :-------------------------------: |
+|  /apply  |  GET   |   -    |     -      |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 #### Send Application
 
-| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
-| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
-| /apply   |  POST  | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+| Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
+|  /apply  |  POST  |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 The JSON body shoul look like this:
 
