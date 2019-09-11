@@ -3,6 +3,8 @@ import Application from '../models/Application';
 
 import Notification from '../schemas/Notification';
 
+import Mail from '../../lib/Mail';
+
 class ApplicationController {
   async index(req, res) {
     const { page = 1 } = req.query;
@@ -78,6 +80,20 @@ class ApplicationController {
     await Notification.create({
       content: `New application recieved from ${user.name}!`,
       user: company_id,
+    });
+
+    const company = await User.findOne({
+      where: { id: company_id, company: true },
+    });
+
+    await Mail.sendMail({
+      to: `${company.name} <${company.email}>`,
+      subject: 'New Application!',
+      template: 'application',
+      context: {
+        user: user.name,
+        company: company.name,
+      },
     });
 
     return res.json(application);

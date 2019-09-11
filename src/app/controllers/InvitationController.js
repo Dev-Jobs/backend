@@ -88,8 +88,12 @@ class InvitationController {
 
     await Mail.sendMail({
       to: `${user.name} <${user.email}>`,
-      subject: 'New invitation!',
-      text: 'You have a new invitation!',
+      subject: 'Great News!',
+      template: 'invitation',
+      context: {
+        user: user.name,
+        company: company.name,
+      },
     });
 
     return res.json(invitation);
