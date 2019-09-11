@@ -28,6 +28,24 @@ You can contribute in many ways, but the most effective is creating a new issue 
 
 To run this project in the development mode, you'll need to have a basic environment with NodeJS 8+ installed. To use the database, you'll need to have MongoDB and Postgress installed and running on your machine.
 
+### Docker
+
+To run this project you will need to have Docker runing in your machine and have some images configurated.
+
+To do so, you will need to create the following images:
+
+Postgres (Note: Replace the <password> field for the password you want):
+
+```bash
+$ docker run --name database -e POSTGRES_PASSWORD=<password> -p 5432:5432 -d postgres
+```
+
+Redis:
+
+```bash
+$ docker run --name redis -p 6379:6379 -d -t redis:alpine
+```
+
 ### Installing
 
 Cloning the repository
@@ -131,3 +149,5 @@ this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 - [Sequelize](https://sequelize.org/) - Object Modeling + PostgreSQL Connector
 - [NodeMailer](https://nodemailer.com/about/) - Mail handler
 - [HandleBars](https://handlebarsjs.com/) - Mail template engine
+- [Redis](https://redis.io/) - Performatic database for mail queues
+- [Docker](https://www.docker.com/) - Containers
