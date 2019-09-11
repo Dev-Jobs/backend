@@ -73,7 +73,132 @@ $ yarn dev
 
 ## Routes
 
-Comming Soon when the first production version come out!
+### User related routes
+
+#### List Users
+
+| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
+| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
+| /users   |  GET   | -      | -          | -     | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+
+#### Create Account
+
+| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
+| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
+| /users   | POST   | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+
+The JSON body should look like this:
+
+- For developers:
+
+```JSON
+{
+  "name": "Gabriel",
+  "email": "gabriel@email.com",
+  "numero_cadastro": "000.000.000-00",
+  "password": "123456"
+}
+```
+
+- For companies:
+
+```JSON
+{
+  "name": "Google",
+  "email": "google@email.com",
+  "numero_cadastro": "000.000.000-00",
+  "password": "123456",
+  "company": true
+}
+```
+
+#### Log in
+
+| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
+| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
+| /session |  PUT   | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+
+The JSON body should look like this:
+
+- For both company and developer:
+
+```JSON
+{
+  "email": "gabriel@email.com",
+  "password": "123456"
+}
+```
+
+#### Update Information
+
+| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
+| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
+| /users   | POST   | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+
+The JSON body shoul look like this:
+
+- For changing passwords:
+
+```JSON
+{
+  "email": "gabriel@email.com",
+  "oldPassword": "123456",
+  "password": "BetterPassword",
+  "confirmPassword": "BetterPassword"
+}
+```
+
+- For changing any other informations:
+
+```JSON
+{
+  "name": "New Name",
+  "email": "NewEmail@email.com",
+  "password": "123456"
+}
+```
+
+### Action related routes
+
+#### List Invites
+
+| Endpoint | Method | Params | URL Params | Success Response | Error Responsonse                 |
+| :---:    | :---:  | :---:  | :---:      | :---:            | :---:                             |
+| /invite  |  GET   | -      | -          | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+
+#### Send Invite
+
+| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
+| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
+| /invite  |  POST  | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+
+The JSON body shoul look like this:
+
+```JSON
+{
+  "user_id": "ID of the user you want to invite"
+}
+```
+
+#### List Applications
+
+| Endpoint | Method | Params | URL Params | Success Response | Error Responsonse                 |
+| :---:    | :---:  | :---:  | :---:      | :---:            | :---:                             |
+| /apply   |  GET   | -      | -          | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+
+#### Send Application
+
+| Endpoint | Method | Params | URL Params | Body  | Success Response | Error Responsonse                 |
+| :---:    | :---:  | :---:  | :---:      | :---: | :---:            | :---:                             |
+| /apply   |  POST  | -      | -          | JSON  | Code: 200 - OK   | Code: 500 - INTERNAL SERVER ERROR |
+
+The JSON body shoul look like this:
+
+```JSON
+{
+  "company_id": "ID of the company you want to apply to"
+}
+```
 
 ## Models
 
