@@ -1,7 +1,7 @@
 import Bee from 'bee-queue';
+import redisConfig from '../config/redis';
 import InvitationMail from '../app/jobs/InvitationMail';
 import ApplicationMail from '../app/jobs/ApplicationMail';
-import redisConfig from '../config/redis';
 
 const jobs = [InvitationMail, ApplicationMail];
 
@@ -36,7 +36,7 @@ class Queue {
   }
 
   handleFailure(job, err) {
-    console.log(`Queue ${job.queue.name} FAILED `, err);
+    console.log(`${job.queue.name} FAILED: `, err);
   }
 }
 
