@@ -3,6 +3,8 @@ import Invitation from '../models/Invitation';
 
 import Notification from '../schemas/Notification';
 
+import Mail from '../../lib/Mail';
+
 class InvitationController {
   async index(req, res) {
     const { page = 1 } = req.query;
@@ -78,6 +80,16 @@ class InvitationController {
     await Notification.create({
       content: `New invitation recieved from ${company.name}!`,
       user: user_id,
+    });
+
+    const user = await User.findOne({
+      where: { id: user_id, company: false },
+    });
+
+    await Mail.sendMail({
+      to: `${user.name} <${user.email}>`,
+      subject: 'New invitation!',
+      text: 'You have a new invitation!',
     });
 
     return res.json(invitation);
