@@ -134,6 +134,7 @@ this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 ## Technologies:
 
 - [Node](https://nodejs.org/en/) - Build the backend
+- [Docker](https://www.docker.com/) - Containers
 - [Body-Parser](https://github.com/expressjs/body-parser#readme) - Node.js body parsing middleware
 - [Eslint](https://eslint.org/) - JS Linter and code style
 - [Prettier](https://github.com/prettier/prettier) - Code formatter
@@ -150,4 +151,4 @@ this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 - [NodeMailer](https://nodemailer.com/about/) - Mail handler
 - [HandleBars](https://handlebarsjs.com/) - Mail template engine
 - [Redis](https://redis.io/) - Performatic database for mail queues
-- [Docker](https://www.docker.com/) - Containers
+- [Bee-Queue](https://github.com/bee-queue/bee-queue) - Performatic queue management
