@@ -6,7 +6,7 @@
 
 This is the backend repository from DevJobs's Site and App.
 
-It's a RESTFULL API built with NodeJS + Express.
+It's a API REST built with NodeJS + Express.
 
 The main purpose of this project is to get fresh developers, who struggle with the new world of professional programming, and companies in the easiest way possible, so they can built amazing things together.
 
@@ -115,17 +115,19 @@ this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 
 ## Technologies:
 
-- Node - Build the backend
-- Body-Parser - Node.js body parsing middleware
-- Eslint - JS Linter and code style
-- Prettier - Code formatter
-- Mongoose - Object Modeling + DB Connector
-- Dotenv - Environment loader
-- Nodemon - Process Manager used in the development
-- Sucrase - Babel alternative
-- Bcrypt - Hashing passwords
-- Express - Application Router
-- JSON Web Token - User authentication
-- MongoDB - Database
-- PostgreSQL - Database
-- Sequelize - Object Modeling + PostgreSQL Connector
+- [Node](https://nodejs.org/en/) - Build the backend
+- [Body-Parser](https://github.com/expressjs/body-parser#readme) - Node.js body parsing middleware
+- [Eslint](https://eslint.org/) - JS Linter and code style
+- [Prettier](https://github.com/prettier/prettier) - Code formatter
+- [Mongoose](https://mongoosejs.com/) - Object Modeling + DB Connector
+- [Dotenv](https://github.com/motdotla/dotenv) - Environment loader
+- [Nodemon](https://nodemon.io/) - Process Manager used in the development
+- [Sucrase](https://sucrase.io/) - Babel alternative
+- [Bcrypt](https://www.npmjs.com/package/bcryptjs) - Hashing passwords
+- [Express](https://expressjs.com/) - Application Router
+- [JSON Web Token](https://jwt.io/) - User authentication
+- [MongoDB](https://www.mongodb.com/) - Database
+- [PostgreSQL](https://www.postgresql.org/) - Database
+- [Sequelize](https://sequelize.org/) - Object Modeling + PostgreSQL Connector
+- [NodeMailer](https://nodemailer.com/about/) - Mail handler
+- [HandleBars](https://handlebarsjs.com/) - Mail template engine
