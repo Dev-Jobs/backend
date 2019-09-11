@@ -3,7 +3,8 @@ import Invitation from '../models/Invitation';
 
 import Notification from '../schemas/Notification';
 
-import Mail from '../../lib/Mail';
+import InvitationMail from '../jobs/InvitationMail';
+import Queue from '../../lib/Queue';
 
 class InvitationController {
   async index(req, res) {
@@ -86,14 +87,9 @@ class InvitationController {
       where: { id: user_id, company: false },
     });
 
-    await Mail.sendMail({
-      to: `${user.name} <${user.email}>`,
-      subject: 'Great News!',
-      template: 'invitation',
-      context: {
-        user: user.name,
-        company: company.name,
-      },
+    await Queue.add(InvitationMail.key, {
+      user,
+      company,
     });
 
     return res.json(invitation);

@@ -3,7 +3,8 @@ import Application from '../models/Application';
 
 import Notification from '../schemas/Notification';
 
-import Mail from '../../lib/Mail';
+import ApplicationMail from '../jobs/ApplicationMail';
+import Queue from '../../lib/Queue';
 
 class ApplicationController {
   async index(req, res) {
@@ -86,14 +87,9 @@ class ApplicationController {
       where: { id: company_id, company: true },
     });
 
-    await Mail.sendMail({
-      to: `${company.name} <${company.email}>`,
-      subject: 'New Application!',
-      template: 'application',
-      context: {
-        user: user.name,
-        company: company.name,
-      },
+    await Queue.add(ApplicationMail.key, {
+      user,
+      company,
     });
 
     return res.json(application);
