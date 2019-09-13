@@ -1,10 +1,11 @@
 import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
+import path from 'path';
 
 import authConfig from '../../config/auth';
 
 export default async (req, res, next) => {
-  const authHeader = req.headers.authorization;
+  const authHeader = path.basename(req.headers.authorization);
 
   if (!authHeader) {
     return res.status(401).json({ error: 'Token not provided' });
