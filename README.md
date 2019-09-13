@@ -4,7 +4,7 @@
 
 #
 
-This is the backend repository from DevJobs's Site and App.
+This is the backend repository from DevJobs's [Site](https://github.com/gabrielccarvalho/DevJobs) and App.
 
 It's a API REST built with NodeJS + Express.
 
@@ -280,3 +280,4 @@ this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 - [HandleBars](https://handlebarsjs.com/) - Mail template engine
 - [Redis](https://redis.io/) - Performatic database for mail queues
 - [Bee-Queue](https://github.com/bee-queue/bee-queue) - Performatic queue management
+- [EditorConfig](https://editorconfig.org/) - Consistent coding styles 
