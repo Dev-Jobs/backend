@@ -9,6 +9,7 @@ import './database';
 class App {
   constructor() {
     this.server = express();
+    this.server.disable('x-powered-by');
 
     this.middlewares();
     this.routes();
