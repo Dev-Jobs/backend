@@ -1,6 +1,7 @@
 import 'dotenv/config';
 
 import express from 'express';
+import cors from 'cors';
 import Youch from 'youch';
 import routes from './routes';
 
@@ -10,6 +11,7 @@ class App {
   constructor() {
     this.server = express();
     this.server.disable('x-powered-by');
+    this.server.use(cors());
 
     this.middlewares();
     this.routes();
