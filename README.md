@@ -280,4 +280,5 @@ this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 - [HandleBars](https://handlebarsjs.com/) - Mail template engine
 - [Redis](https://redis.io/) - Performatic database for mail queues
 - [Bee-Queue](https://github.com/bee-queue/bee-queue) - Performatic queue management
-- [EditorConfig](https://editorconfig.org/) - Consistent coding styles 
+- [EditorConfig](https://editorconfig.org/) - Consistent coding styles
+- [Cors](https://www.npmjs.com/package/cors) - Used to enable CORS.

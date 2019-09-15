@@ -11,7 +11,6 @@ class App {
   constructor() {
     this.server = express();
     this.server.disable('x-powered-by');
-    this.server.use(cors());
 
     this.middlewares();
     this.routes();
@@ -19,6 +18,7 @@ class App {
 
   middlewares() {
     this.server.use(express.json());
+    this.server.use(cors());
   }
 
   routes() {
