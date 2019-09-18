@@ -22,6 +22,10 @@ As a developer or a company in general, the biggest problem is always either fou
 
 You can contribute in many ways, but the most effective is creating a new issue with your sugestion, code, experience, or anything you can think that it will help this project evolve.
 
+If you want to make a pull request, please read this before so you can adequately commit:
+
+-[Semantic Commit](https://seesparkbox.com/foundry/semantic_commit_messages)
+
 ## Getting started
 
 ### Pre-requisits
@@ -83,6 +87,22 @@ $ yarn dev
 | Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
 | :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
 |  /users  |  GET   |   -    |     -      |  -   |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
+
+#### Send Contact Information
+
+| Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
+| /contact |  POST  |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
+
+The JSON body should look like this:
+
+```JSON
+{
+  "name": "Gabriel",
+  "email": "gabriel@email.com",
+  "phone_number": "(99) 99999-9999"
+}
+```
 
 #### Create Account
 
@@ -218,6 +238,10 @@ password_hash: Sequelize.STRING,
 },
 ```
 
+#### Model Description
+
+This model is used to pass the user information.
+
 #### Field Details
 
 - name: Is a string field that recieves your name as data.
@@ -238,6 +262,10 @@ this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 }
 ```
 
+#### Model Description
+
+This model is used to pass the invitation sender and receiver information.
+
 #### Field Details
 
 - user_id: Is a number field that recieves the id of a non-company type user.
@@ -254,10 +282,34 @@ this.belongsTo(models.User, { foreignKey: 'company_id', as: 'company' });
 }
 ```
 
+#### Model Description
+
+This model is used to pass the application sender and receiver information.
+
 #### Field Details
 
 - user_id: Is a number field that recieves the id of a non-company type user.
 - company_id: Is a number field that recieves the id of a company type user
+
+### New Company
+
+```JavaScript
+{
+  name: Sequelize.STRING,
+  email: Sequelize.STRING,
+  phone_number: Sequelize.STRING,
+},
+```
+
+#### Model Description
+
+This model is used to pass the contact information of a possible new company.
+
+#### Field Details
+
+- name: Is a string field that recieves your name as data.
+- email: Is a string field that recieves your email as data.
+- phone_number: Is a string field that recieves your phone number as data.
 
 ## Technologies:
 
