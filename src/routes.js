@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 import UserController from './app/controllers/UserController';
+import ContactController from './app/controllers/ContactController';
 import SessionController from './app/controllers/SessionController';
 import InvitationController from './app/controllers/InvitationController';
 import ApplicationController from './app/controllers/ApplicationController';
@@ -14,6 +15,9 @@ routes.get('/users', UserController.index);
 
 // Account creation
 routes.post('/users', UserController.store);
+
+// Contact information
+routes.post('/contact', ContactController.store);
 
 // Session creation
 routes.post('/session', SessionController.store);
