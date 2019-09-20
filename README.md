@@ -181,6 +181,14 @@ The JSON body shoul look like this:
 }
 ```
 
+#### Add user avatar
+
+| Endpoint | Method | Params | URL Params |      Body      | Success Response |         Error Responsonse         |
+| :------: | :----: | :----: | :--------: | :------------: | :--------------: | :-------------------------------: |
+|  /files  |  POST  |   -    |     -      | Multipart Form |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
+
+The name of the Multiform Form Data must be 'file' and for the value, the image.
+
 ### Action related routes
 
 #### List Invites
@@ -311,6 +319,31 @@ This model is used to pass the contact information of a possible new company.
 - email: Is a string field that recieves your email as data.
 - phone_number: Is a string field that recieves your phone number as data.
 
+### File
+
+```JavaScript
+{
+  name: Sequelize.STRING,
+  path: Sequelize.STRING,
+  url: {
+    type: Sequelize.VIRTUAL,
+    get() {
+      return `${process.env.APP_URL}/files/${this.path}`;
+    },
+  },
+},
+```
+
+#### Model Description
+
+This model is used to upload the user avatar image.
+
+#### Field Details
+
+- name: Is a string field that recieves your name as data.
+- path: Is a string field that recieves the path for the file as data.
+- url: Is a virtual field that recieves the image url as data.
+
 ## Technologies:
 
 - [Node](https://nodejs.org/en/) - Build the backend
@@ -334,3 +367,4 @@ This model is used to pass the contact information of a possible new company.
 - [Bee-Queue](https://github.com/bee-queue/bee-queue) - Performatic queue management
 - [EditorConfig](https://editorconfig.org/) - Consistent coding styles
 - [Cors](https://www.npmjs.com/package/cors) - Used to enable CORS.
+- [Multer](https://github.com/expressjs/multer) - Used to upload user avatar.
