@@ -24,7 +24,7 @@ You can contribute in many ways, but the most effective is creating a new issue 
 
 If you want to make a pull request, please read this before so you can adequately commit:
 
--[Semantic Commit](https://seesparkbox.com/foundry/semantic_commit_messages)
+- [Semantic Commit](https://seesparkbox.com/foundry/semantic_commit_messages)
 
 ## Getting started
 
