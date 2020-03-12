@@ -10,15 +10,15 @@ It's a API REST built with NodeJS + Express.
 
 The main purpose of this project is to get fresh developers, who struggle with the new world of professional programming, and companies in the easiest way possible, so they can built amazing things together.
 
-## Note
+## Note 📝
 
 This repository is still in building stage. It means that the information provided here can and will constantly update and change as the project evolves, so be aware for the changes!
 
-## About this project
+## About this project 📚
 
 As a developer or a company in general, the biggest problem is always either found a qualified developer or be found by them. Knowing this, I created the DevJobs, which is a open source job match solution for developers and companies.
 
-## Contribuing
+## Contribuing 🖊
 
 You can contribute in many ways, but the most effective is creating a new issue with your sugestion, code, experience, or anything you can think that it will help this project evolve.
 
@@ -26,9 +26,9 @@ If you want to make a pull request, please read this before so you can adequatel
 
 - [Semantic Commit](https://seesparkbox.com/foundry/semantic_commit_messages)
 
-## Getting started
+## Getting started 💡
 
-### Pre-requisits
+### Pre-requisits ✋🏼
 
 To run this project in the development mode, you'll need to have a basic environment with NodeJS 8+ installed. To use the database, you'll need to have MongoDB and Postgress installed and running on your machine.
 
@@ -50,7 +50,7 @@ Redis:
 $ docker run --name redis -p 6379:6379 -d -t redis:alpine
 ```
 
-### Installing
+### Installing ⚙️
 
 Cloning the repository
 
@@ -78,7 +78,7 @@ Running the development enviroment
 $ yarn dev
 ```
 
-## Routes
+## Routes 🚙
 
 ### User related routes
 
@@ -231,7 +231,7 @@ The JSON body shoul look like this:
 }
 ```
 
-## Models
+## Models 📋
 
 ### User
 
@@ -344,7 +344,7 @@ This model is used to upload the user avatar image.
 - path: Is a string field that recieves the path for the file as data.
 - url: Is a virtual field that recieves the image url as data.
 
-## Technologies:
+## Technologies 🖥
 
 - [Node](https://nodejs.org/en/) - Build the backend
 - [Docker](https://www.docker.com/) - Containers
