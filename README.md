@@ -139,7 +139,7 @@ The JSON body should look like this:
 
 | Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
 | :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
-| /session |  PUT   |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
+| /session |  POST  |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 The JSON body should look like this:
 
@@ -156,7 +156,7 @@ The JSON body should look like this:
 
 | Endpoint | Method | Params | URL Params | Body | Success Response |         Error Responsonse         |
 | :------: | :----: | :----: | :--------: | :--: | :--------------: | :-------------------------------: |
-|  /users  |  POST  |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
+|  /users  |  PUT   |   -    |     -      | JSON |  Code: 200 - OK  | Code: 500 - INTERNAL SERVER ERROR |
 
 The JSON body shoul look like this:
 
